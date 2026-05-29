@@ -4,7 +4,6 @@
     --text-muted: #9ba3af;
     --color-red: #f8314e;
     --color-blue: #6d93d8;
-    --color-dark-surface: #101217;
     --font-main: 'Inter', sans-serif;
 }
 
@@ -62,23 +61,7 @@ body {
     z-index: 1;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0 3rem 0;
-}
-
-.logo-img { height: 50px; width: auto; }
-
-.logo-fallback {
-    font-family: 'Brush Script MT', cursive, sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-.text-red { color: var(--color-red); }
-.text-glow { color: #fff; text-shadow: 0 0 15px var(--color-blue); font-style: italic; }
-
-/* Coming Soon Content */
+/* Center Stage Content */
 .main-content {
     flex: 1;
     display: flex;
@@ -86,33 +69,41 @@ body {
     align-items: center;
 }
 
-.coming-soon-card {
+.center-stage {
     text-align: center;
-    max-width: 650px;
-    padding: 3rem;
-    background: rgba(16, 18, 23, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    animation: fadeUp 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeUp 1s ease-out;
+    width: 100%;
 }
 
-.kicker {
-    color: var(--color-red);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
+.main-logo {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.1));
 }
+
+.logo-fallback {
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.text-red { color: var(--color-red); }
+.text-glow { color: #fff; text-shadow: 0 0 25px var(--color-blue); font-style: italic; }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }
 
 .text-gradient {
@@ -120,72 +111,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-.hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 3rem;
-}
-
-/* Form Styles */
-.waitlist-form {
-    display: flex;
-    gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.5rem;
-    border-radius: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.waitlist-form:focus-within {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.waitlist-form input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 1rem 1.5rem;
-    color: #fff;
-    font-size: 1rem;
-    font-family: var(--font-main);
-    outline: none;
-}
-
-.waitlist-form input::placeholder { color: #64748b; }
-
-.btn-primary {
-    background: linear-gradient(90deg, #b91c30 0%, #e82c46 100%);
-    color: white;
-    border: none;
-    border-radius: 2.5rem;
-    padding: 1rem 2rem;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(232, 44, 70, 0.3);
-    transition: transform 0.2s;
-    font-family: var(--font-main);
-}
-
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232, 44, 70, 0.5); }
-
-.success-msg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #e2e8f0;
-    font-weight: 500;
-    padding: 1rem;
-}
-
-.dot { width: 8px; height: 8px; border-radius: 50%; }
-.dot-blue { background: var(--color-blue); box-shadow: 0 0 10px var(--color-blue); }
 
 /* Footer */
 .footer {
@@ -196,13 +121,12 @@ body {
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .coming-soon-card { padding: 2rem 1.5rem; }
-    .waitlist-form { flex-direction: column; border-radius: 1rem; padding: 1rem; gap: 1rem; }
-    .btn-primary { width: 100%; border-radius: 0.75rem; }
+    .main-logo { max-width: 90%; }
+    .hero-title { font-size: 1.8rem; letter-spacing: 0.1em; }
+    .logo-fallback { font-size: 4rem; }
 }
